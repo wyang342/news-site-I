@@ -17,7 +17,7 @@ class HomeContainer extends Component {
 }
 
 HomeContainer.propTypes = {
-  news: React.PropTypes.object
+  match: React.PropTypes.object.isRequired
 }
 
 export default HomeContainer;
