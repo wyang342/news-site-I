@@ -41,7 +41,7 @@ The Article component should:
 ## Component III: Nav
 The Nav component should accept the following props:
 1. navItems - an array of navItem objects.
-2. handleNavItemClick - a function
+2. handleNavClick - a function
 
 The Nav component should return a `<nav>` component that contains `<a>`'s as children - one for every item in the this.props.navItems array.  
 
@@ -53,4 +53,4 @@ The Nav component should:
   value: "nyregion"
 }
 
-When transforming/mapping the nav item objects in this.props.navItems into an array of `<a>` tags, you'll want to use the label property (displayed in the example above) as the text that appears on screen.  At the same time, you will want to attach an event handler to each `<a>`'s onClick event.  onClick should call this.props.handleNavItemClick, and pass the 'value' property from the nav item object.
+When transforming/mapping the nav item objects in this.props.navItems into an array of `<a>` tags, you'll want to use the label property (displayed in the example above) as the text that appears on screen.  At the same time, you will want to attach an event handler to each `<a>`'s onClick event.  onClick should call this.props.handleNavClick, and pass the 'value' property from the nav item object.
