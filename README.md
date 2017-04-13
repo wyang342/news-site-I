@@ -1,3 +1,4 @@
+```
 In this challenge, we will focus on creating three components that we will later use as we create a news site similar to reddit.com.  
 
 Each of the three components listed below has been stubbed out - your mission is to create the content that the component should render, and handle the props that are being passed in appropriately. 
@@ -51,4 +52,4 @@ The Nav component should:
   value: "nyregion"
 }
 
-When transforming/mapping the nav item objects in this.props.navItems into an array of <a> tags, you'll want to use the label property (displayed in the example above) as the text that appears on screen.  At the same time, you will want to attach an event handler to each <a>'s onClick event.  onClick should call this.props.handleNavItemClick, and pass the 'value' property from the nav item object.  
+When transforming/mapping the nav item objects in this.props.navItems into an array of <a> tags, you'll want to use the label property (displayed in the example above) as the text that appears on screen.  At the same time, you will want to attach an event handler to each <a>'s onClick event.  onClick should call this.props.handleNavItemClick, and pass the 'value' property from the nav item object.  ```
