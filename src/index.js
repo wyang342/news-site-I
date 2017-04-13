@@ -1,18 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
-
+import App from './App';
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
-
-import HomeContainer from './containers/Home/HomeContainer';
-
-const News = require('../data/news.json');
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Route path="/" render={(props)  => <HomeContainer news={News} {...props} /> } />
-  </BrowserRouter>,
+  <App />,
   document.getElementById('root')
 );
