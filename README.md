@@ -10,14 +10,14 @@ While these `components` can be viewed in your browser by running `npm run start
 The ArticleTeaser component should accept the following `props`:
 1. `id` - a number
 2. `title` - a string
-3. `created_date` - a string (there is a bug in the code! can you find it?)
-4. `handleTitleClick` - a function
+3. `created_date` - a string (there is a bug in the code, specifically App.js! can you find it?)
+4. `handleTitleClick` - a function. Will arrow functions be useful here?
 
 All of these `props` will always be passed in.
 
 The `ArticleTeaser` `component` should:
 1. Display the `title` inside of an `<a>` tag.
-2. When the `title` `<a>` tag is clicked, it should call `this.props.handleTitleClick(this.props.id);`
+2. When the `title` `<a>` tag is clicked, it should call `this.props.handleTitleClick(this.props.id);`. Will arrow functions be useful here?
 3. Display the `created_date` in a `<p>` tag.
 
 ## Component II: Article
@@ -41,7 +41,7 @@ The `Article` `component` should:
 ## Component III: Nav
 The Nav `component` should accept the following `props`:
 1. `navItems` - an array of navItem objects.
-2. `handleNavClick` - a function
+2. `handleNavClick` - a function. Will arrow functions be useful here?
 
 The `Nav` `component` should return a `<nav>` `component` that contains `<a>`'s as children - one for every item in the `this.props.navItems` array.
 
