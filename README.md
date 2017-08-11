@@ -54,3 +54,4 @@ The Nav `component` should:
 }
 ```
 When transforming/mapping the `nav` item objects in `this.props.navItems` into an array of `<a>` tags, you'll want to use the `label` property (displayed in the example above) as the text that appears on screen. At the same time, you will want to attach an event handler to each `<a>`'s `onClick` event. `onClick` should call `this.props.handleNavClick`, and pass the 'value' property from the `nav` item object.
+
