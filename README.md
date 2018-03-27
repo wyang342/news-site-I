@@ -1,6 +1,6 @@
 # Overview
 
-In this challenge, we will focus on creating three components that we will later use as we create a news site similar to reddit.com.
+In this challenge, we will focus on creating three components that we will later use as we create a news site similar to [Reddit](https://www.reddit.com/).
 
 Each of the three components listed below has been stubbed out - your mission is to create the content that the component should `render`, and handle the `props` that are being passed in appropriately. 
 
@@ -38,14 +38,14 @@ The `Article` component should:
 5. Display the `abstract` inside of a `<p>` tag.
 
 
-## Component III: Nav
-The `Nav` component should accept the following `props`:
+## Component III: AppNav
+The `AppNav` component should accept the following `props`:
 1. `navItems` - an array of navItem objects.
 2. `handleNavClick` - a function. Will arrow functions be useful here?
 
-The `Nav` component should return a `<nav>` component that contains `<a>`'s as children - one for every item in the `this.props.navItems` array.
+The `AppNav` component should return a `<nav>` component that contains `<a>`'s as children - one for every item in the `this.props.navItems` array.
 
-The Nav component should:
+The AppNav component should:
 1) Map through `this.props.navItems` to create an array of `<a>` elements. The objects within `this.props.navItems` look something like this:
 ```
 {

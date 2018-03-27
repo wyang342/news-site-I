@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import News from './data/news.json';
 import './App.css';
-import Nav from './components/Nav/Nav.js';
+import AppNav from './components/AppNav/AppNav.js';
 import ArticleTeaser from './components/ArticleTeaser/ArticleTeaser.js'
 import Article from './components/Article/Article.js'
 
@@ -58,9 +58,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Nav Component</h1>
+        <h1>AppNav Component</h1>
         <hr />
-        <Nav navItems={this.state.navItems} handleNavClick={(clickedItem) => console.log(clickedItem)} />
+        <AppNav navItems={this.state.navItems} handleNavClick={(clickedItem) => console.log(clickedItem)} />
         <h1>ArticleTeaser Component</h1>
         <hr />
         <ArticleTeaser 
