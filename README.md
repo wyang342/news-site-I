@@ -10,7 +10,7 @@ While these components can be viewed in your browser by running `npm run start`,
 The `ArticleTeaser` component should accept the following `props`:
 1. `id` - a number
 2. `title` - a string
-3. `created_date` - a string (there is a bug in the code, specifically App.js! can you find it?)
+3. `created_date` - a string (there is a bug in the code- can you find it?)
 4. `handleTitleClick` - a function. Will arrow functions be useful here?
 
 All of these `props` will always be passed in.
