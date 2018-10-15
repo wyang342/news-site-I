@@ -6,6 +6,15 @@ Each of the three components listed below has been stubbed out - your mission is
 
 While these components can be viewed in your browser by running `npm run start`, there are unit tests already created that test the component behaviors specified below.
 
+###Tests
+You can run the provided tests at any time with `npm test`. 
+If you get errors you may have to run the following commands. 
+```
+npm uninstall watchman -g
+brew install watchman
+npm test 
+```
+
 ## Component I: ArticleTeaser
 The `ArticleTeaser` component should accept the following `props`:
 1. `id` - a number
