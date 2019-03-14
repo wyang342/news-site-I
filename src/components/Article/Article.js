@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 class Article extends Component {
-  render() {
+  render() {  
     return (
-      <div></div>
+      <div>
+      </div>
     )
   }
 }

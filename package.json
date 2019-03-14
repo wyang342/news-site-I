@@ -3,19 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "enzyme": "^2.8.1",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
-    "react-test-utils": "0.0.1"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-test-renderer": "^16.8.4",
+    "react-test-utils": "0.0.1",
+    "sinon": "^7.2.7"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-to-json": "^3.3.5",
+    "react-scripts": "2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
