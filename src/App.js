@@ -56,6 +56,7 @@ class App extends Component {
     }
   }
   render() {
+    console.log(this.state.article)
     return (
       <div>
         <h1>AppNav Component</h1>
