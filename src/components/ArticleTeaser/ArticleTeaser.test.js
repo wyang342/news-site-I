@@ -9,7 +9,7 @@ it('renders without crashing', () => {
 });
 
 it('accepts title and created_date', () => {
-  const component = mount(<ArticleTeaser id={1} title="Test Headline" createdDate="2017-02-10T03:00:25-05:00" />);
+  const component = mount(<ArticleTeaser id={1} title="Test Headline" created_date="2017-02-10T03:00:25-05:00" />);
   expect(component.html().indexOf('<a href="#">Test Headline</a>')).toBeGreaterThan(-1);
   expect(component.contains(<p>2017-02-10T03:00:25-05:00</p>)).toEqual(true);
 });
