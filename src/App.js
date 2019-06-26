@@ -55,6 +55,7 @@ class App extends Component {
       }
     }
   }
+
   render() {
     console.log(this.state.article)
     return (
@@ -67,7 +68,7 @@ class App extends Component {
         <ArticleTeaser 
           id={this.state.article.id}
           title={this.state.article.title}
-          createdDate={this.state.article.created_date}
+          created_date={this.state.article.created_date}
           handleTitleClick={(articleID) => console.log(articleID)} />
         <h1>Article Component</h1>
         <hr />
