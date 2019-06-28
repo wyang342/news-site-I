@@ -57,22 +57,23 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.article)
+    const {article, navItems} = this.state
+    console.log(article)
     return (
       <div>
         <h1>AppNav Component</h1>
         <hr />
-        <AppNav navItems={this.state.navItems} handleNavClick={(clickedItem) => console.log(clickedItem)} />
+        <AppNav navItems={navItems} handleNavClick={(clickedItem) => console.log(clickedItem)} />
         <h1>ArticleTeaser Component</h1>
         <hr />
         <ArticleTeaser 
-          id={this.state.article.id}
-          title={this.state.article.title}
-          created_date={this.state.article.created_date}
+          id={article.id}
+          title={article.title}
+          created_date={article.created_date}
           handleTitleClick={(articleID) => console.log(articleID)} />
         <h1>Article Component</h1>
         <hr />
-        <Article {...this.state.article} />
+        <Article {...article} />
       </div>
     );
   }
