@@ -26,7 +26,8 @@ The `ArticleTeaser` component should:
 
 
 ## Component II: Article
-The `Article` component should accept the following `props`:
+In `App.js`, you'll notice that when the `Article` component is rendered, we pass `{...article}` to the component. This is known as the spread syntax. You can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax). Rather than passing the entire `article` object, we are spreading its properties to be passed down via `props`.
+Therefore, the `Article` component should accept the following `props`:
 1. `title` - a string
 2. `created_date` - a string
 3. `abstract` - a string
