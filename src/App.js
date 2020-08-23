@@ -30,13 +30,11 @@ class App extends Component {
 
     return (
       <div>
-        {/* TODO: remove <h1> after AppNav is completed */}
         <h1>AppNav Component</h1>
         <hr />
 
         <AppNav navItems={navItems} handleNavClick={(clickedItem) => { console.log(clickedItem) }} />
 
-        {/* TODO: remove <h1> after ArticleTeaser is completed */}
         <h1>ArticleTeaser Component</h1>
         <hr />
 
@@ -46,7 +44,6 @@ class App extends Component {
           created_date={article.created_date}
           handleTitleClick={(articleID) => { console.log(articleID) }} />
 
-        {/* TODO: remove <h1> after Article is completed */}
         <h1>Article Component</h1>
         <hr />
 
