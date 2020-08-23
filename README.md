@@ -1,22 +1,14 @@
 # Overview
 In this challenge, we will focus on creating three components that we will later use as we create a news site similar to [Reddit](https://www.reddit.com/).
 
-Each of the three components listed below has been stubbed out - your mission is to create the content that the component should `render`, and handle the `props` that are being passed in appropriately. It's also your decision on whether your components should be functional components or class components. There's no wrong answer here. Here are some guidelines to help you decide:
-- If your component simply renders text to the screen (whether passed by props or not), use functional components
-- If it does much more than that (e.g., doing a lot with state or using lifecycle methods), use class components.
+## Initial Setup
+To start, create a new create-react-app project from your terminal: `npx create-react-app news-site-I`
+In your new project, copy over the `components` and `data` directories under `src/` and replace the boilerplate `App.js` with the one given here.
 
-All of the components today have been stubbed out as class components. If you want to change them to functional components, feel free to do so.
+Each of the three components listed below has been stubbed out - your mission is to create the content that the component should `render`, and handle the `props` that are being passed in appropriately. For the first pass of this challenge, all components will be class-based.
 
-While these components can be viewed in your browser by running `npm run start`, there are unit tests already created that test the component behaviors specified below.
+Before diving in, it may be helpful to inspect the files in the `data` directory so you know the shape of the data your app will be handling.
 
-### Tests
-You can run the provided tests at any time with `npm test`. If you get errors you may have to run the following commands:
-```sh
-$ npm uninstall watchman -g
-$ brew install watchman
-$ npm install 
-$ npm test 
-```
 
 ## Component I: ArticleTeaser
 The `ArticleTeaser` component should accept the following `props` from `App.js`:
@@ -32,10 +24,9 @@ The `ArticleTeaser` component should:
 2. When the `title` `<a>` tag is clicked, it should call `this.props.handleTitleClick(this.props.id);`. Will arrow functions be useful here?
 3. Display the `created_date` in a `<p>` tag.
 
-**Do you think ArticleTeaser should be a functional component or class component?**
 
 ## Component II: Article
-The `Article` component should accept the following `props`:
+The `Article` component should accept the following `props` via the spread syntax `{...article}` [Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax):
 1. `title` - a string
 2. `created_date` - a string
 3. `abstract` - a string
@@ -51,13 +42,48 @@ The `Article` component should:
 4. Display the `image` (if it exists) in an `<img>` tag (the value of `image` should be set to the `src` attribute of the `<img>` tag).
 5. Display the `abstract` inside of a `<p>` tag.
 
-**Do you think Article should be a functional component or class component?**
+#### Sidenote: Conditional rendering in React
+How do I only render something if the data exists? There are several ways we can handle this in React. Here we will explore three common options:
 
+**Option 1: `&&`**
+
+```javascript
+// in the render
+<ParentComponent>
+  {dataExists && <ChildComponent>}
+</ParentComponent>
+```
+Explanation: If there is just one piece of data we're checking for, we can do a quick existence check which will coerce the data to a boolean value `true` if the data does exist and then render the component/element that follows `&&`. If the data doesn't exist, it will be coerced to a boolean value `false` and will not render the child component/element.
+
+**Option 2: Create a helper render function**
+
+```javascript
+renderIfDataExists = () => {
+  if (dataExists) {
+    return <ChildComponent />
+  }
+};
+
+// in the render
+<ParentComponent>
+  {this.renderIfDataExists()}
+</ParentComponent>
+```
+Explanation: This is a common pattern for rendering that involves more complex logic. For example, if our `dataExists` check was looking for multiple pieces of data, we might want to extract it out into this helper function.
+(Also note that the above code snippet assumes a class-based React component. What would be different if it were written in a functional component?)
+
+**Option 3: Use a ternary operator**
+```javascript
+<ParentComponent>
+  { dataExists ? <ChildComponent /> : '' }
+</ParentComponent>
+```
+Explanation: This is a good option to use if you are choosing between two different components/elements to render, but you can technically just render an empty string or `null` as seen above.
 
 ## Component III: AppNav
 The `AppNav` component should accept the following `props`:
 1. `navItems` - an array of navItem objects.
-2. `handleNavClick` - a function. Will arrow functions be useful here?
+2. `handleNavClick` - a function.
 
 The `AppNav` component should return a `<nav>` component that contains `<a>`'s as children - one for every item in the `this.props.navItems` array.
 
@@ -65,10 +91,13 @@ The AppNav component should:
 1) Map through `this.props.navItems` to create an array of `<a>` elements. The objects within `this.props.navItems` look something like this:
 ```
 {
- label: "NYREGION",
- value: "nyregion"
+  label: "NYREGION",
+  value: "nyregion"
 }
 ```
 When transforming/mapping the `nav` item objects in `this.props.navItems` into an array of `<a>` tags, you'll want to use the `label` property (displayed in the example above) as the text that appears on screen. At the same time, you will want to attach an event handler to each `<a>`'s `onClick` event. `onClick` should call `this.props.handleNavClick`, and pass the 'value' property from the `nav` item object.
 
-**Do you think AppNav should be a functional component or class component?**
+**You are done when all of our data is displayed and your `onClick` events are firing (i.e. you should see the `console.log`s)**
+
+## Now make it Functional!
+After you've committed your changes, open a new branch called `functional-version`. In this new branch, refactor your class-based components into functional ones. This may seem silly, but this is a large part of working in a real legacy React codebase, so understanding how to do these sorts of refactors is critical. Be sure to have BOTH versions of your work -- `master` as class-based and `functional-version` as functional. We will continue work on both in the future.

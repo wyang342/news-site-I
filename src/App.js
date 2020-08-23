@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import News from './data/news.json';
+import navItems from './data/navItems.json';
 import './App.css';
 import AppNav from './components/AppNav/AppNav.js';
 import ArticleTeaser from './components/ArticleTeaser/ArticleTeaser.js'
@@ -10,41 +11,9 @@ class App extends Component {
     super(props);
     const randomArticleIndex = Math.floor(Math.random() * News.length);
     const randomArticle = News[randomArticleIndex];
+
     this.state = {
-      navItems: [
-        {
-          label: "HOME",
-          value: "home"
-        },
-        {
-          label: "OPINION",
-          value: "opinion"
-        },
-        {
-          label: "WORLD",
-          value: "world"
-        },
-        {
-          label: "NATIONAL",
-          value: "national"
-        },
-        {
-          label: "POLITICS",
-          value: "politics"
-        },
-        {
-          label: "UPSHOT",
-          value: "upshot"
-        },
-        {
-          label: "NY REGION",
-          value: "nyregion"
-        },
-        {
-          label: "BUSINESS",
-          value: "business"
-        }
-      ],
+      navItems: navItems,
       article: {
         id: randomArticleIndex,
         title: randomArticle.title,
@@ -57,22 +26,30 @@ class App extends Component {
   }
 
   render() {
-    const {article, navItems} = this.state
-    console.log(article)
+    const { article, navItems } = this.state
+
     return (
       <div>
+        {/* TODO: remove <h1> after AppNav is completed */}
         <h1>AppNav Component</h1>
         <hr />
-        <AppNav navItems={navItems} handleNavClick={(clickedItem) => console.log(clickedItem)} />
+
+        <AppNav navItems={navItems} handleNavClick={(clickedItem) => { console.log(clickedItem) }} />
+
+        {/* TODO: remove <h1> after ArticleTeaser is completed */}
         <h1>ArticleTeaser Component</h1>
         <hr />
-        <ArticleTeaser 
+
+        <ArticleTeaser
           id={article.id}
           title={article.title}
           created_date={article.created_date}
-          handleTitleClick={(articleID) => console.log(articleID)} />
+          handleTitleClick={(articleID) => { console.log(articleID) }} />
+
+        {/* TODO: remove <h1> after Article is completed */}
         <h1>Article Component</h1>
         <hr />
+
         <Article {...article} />
       </div>
     );
