@@ -26,7 +26,7 @@ The `ArticleTeaser` component should:
 
 
 ## Component II: Article
-The `Article` component should accept the following `props` via the spread syntax `{...article}` [Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax):
+The `Article` component should accept the following `props`:
 1. `title` - a string
 2. `created_date` - a string
 3. `abstract` - a string
