@@ -97,7 +97,7 @@ The AppNav component should:
 ```
 When transforming/mapping the `nav` item objects in `this.props.navItems` into an array of `<a>` tags, you'll want to use the `label` property (displayed in the example above) as the text that appears on screen. At the same time, you will want to attach an event handler to each `<a>`'s `onClick` event. `onClick` should call `this.props.handleNavClick`, and pass the 'value' property from the `nav` item object.
 
-**You are done when all of our data is displayed and your `onClick` events are firing (i.e. you should see the `console.log`s)**
+**You are done when all of your data is displayed and your `onClick` events are firing for your AppNav links and your ArticleTeaser links (i.e. you should see the `console.log`s)**
 
 ## Now make it Functional!
 After you've committed your changes, open a new branch called `functional-version`. In this new branch, refactor your class-based components into functional ones. This may seem silly, but this is a large part of working in a real legacy React codebase, so understanding how to do these sorts of refactors is critical. Be sure to have BOTH versions of your work -- `master` as class-based and `functional-version` as functional. We will continue work on both in the future.
