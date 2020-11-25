@@ -2,7 +2,7 @@
 In this challenge, we will focus on creating three components that we will later use as we create a news site similar to [Reddit](https://www.reddit.com/).
 
 ## Initial Setup
-To start, create a new create-react-app project from your terminal: `npx create-react-app news-site-I`
+To start, create a new create-react-app project from your terminal: `npx create-react-app news-site-i`
 In your new project, copy over the `components` and `data` directories under `src/` and replace the boilerplate `App.js` with the one given here.
 
 Each of the three components listed below has been stubbed out - your mission is to create the content that the component should `render`, and handle the `props` that are being passed in appropriately. For the first pass of this challenge, all components will be class-based.
