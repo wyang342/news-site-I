@@ -6,7 +6,12 @@ class ArticleTeaser extends Component {
 
         return (
             <div>
-                <a onClick={() => handleTitleClick(id)}>{title}</a>
+                <a onClick={(event) => {
+                    handleTitleClick(id);
+                    event.preventDefault();
+                }}>
+                    {title}
+                </a>
                 <p>{created_date}</p>
             </div>
         )

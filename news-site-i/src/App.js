@@ -6,51 +6,34 @@ import AppNav from './components/AppNav/AppNav.js';
 import ArticleTeaser from './components/ArticleTeaser/ArticleTeaser.js'
 import Article from './components/Article/Article.js'
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        const randomArticleIndex = Math.floor(Math.random() * News.length);
-        const randomArticle = News[randomArticleIndex];
+function App() {
+    const randomArticleIndex = Math.floor(Math.random() * News.length);
+    const randomArticle = News[randomArticleIndex];
 
-        this.state = {
-            navItems: navItems,
-            article: {
-                id: randomArticleIndex,
-                title: randomArticle.title,
-                abstract: randomArticle.abstract,
-                byline: randomArticle.byline,
-                image: randomArticle.multimedia.length ? randomArticle.multimedia[0].url : null,
-                created_date: randomArticle.created_date
-            }
-        }
-    }
 
-    render() {
-        const { article, navItems } = this.state
+    return (
+        <div>
+            <h1>AppNav Component</h1>
+            <hr />
+            <AppNav navItems={navItems} handleNavClick={(clickedItem) => { console.log(clickedItem) }} />
 
-        return (
-            <div>
-                <h1>AppNav Component</h1>
-                <hr />
+            <h1>ArticleTeaser Component</h1>
+            <hr />
 
-                <AppNav navItems={navItems} handleNavClick={(clickedItem) => { console.log(clickedItem) }} />
+            <ArticleTeaser
+                id={randomArticleIndex + 1}
+                title={randomArticle.title}
+                created_date={randomArticle.created_date}
+                handleTitleClick={(articleID) => { console.log(articleID) }} />
 
-                <h1>ArticleTeaser Component</h1>
-                <hr />
+            <h1>Article Component</h1>
+            <hr />
 
-                <ArticleTeaser
-                    id={article.id}
-                    title={article.title}
-                    created_date={article.created_date}
-                    handleTitleClick={(articleID) => { console.log(articleID) }} />
+            <Article {...randomArticle} />
+        </div>
 
-                <h1>Article Component</h1>
-                <hr />
-
-                <Article {...article} />  {/* like doing <Article id=foo title=bar */}
-            </div>
-        );
-    }
+    )
 }
+
 
 export default App;
