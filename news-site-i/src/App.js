@@ -9,7 +9,12 @@ import Article from './components/Article/Article.js'
 function App() {
     const randomArticleIndex = Math.floor(Math.random() * News.length);
     const randomArticle = News[randomArticleIndex];
-
+    let imageUrl
+    try {
+        imageUrl = randomArticle.multimedia[0].url;
+    } catch {
+        imageUrl = null;
+    }
 
     return (
         <div>
@@ -29,7 +34,7 @@ function App() {
             <h1>Article Component</h1>
             <hr />
 
-            <Article {...randomArticle} />
+            <Article {...randomArticle} image={imageUrl} />
         </div>
 
     )

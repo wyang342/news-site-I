@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-class AppNav extends Component {
-    getLinks = (navItems, handleNavClick) => {
+function AppNav({ navItems, handleNavClick }) {
+    const getLinks = () => {
         const links = navItems.map(navItem => {
             return (
                 <span>
@@ -14,15 +14,12 @@ class AppNav extends Component {
         return links;
     }
 
-    render() {
-        const { navItems, handleNavClick } = this.props;
-
-        return (
-            <nav>
-                {this.getLinks(navItems, handleNavClick)}
-            </nav>
-        )
-    }
+    return (
+        <nav>
+            {getLinks()}
+        </nav>
+    )
 }
+
 
 export default AppNav;
